@@ -1,45 +1,45 @@
 #N canvas 455 23 953 847 12;
-#X obj 356 329 mtof;
+#X obj 360 400 mtof;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array seq 12 float 3;
 #A 0 0.74 0.56 0.76 0.48 0.55 0.72 0.19 0.71 0.9 0 0.08 0.88;
 #X coords 0 1 12 0 200 140 1 0 0;
-#X restore 522 245 graph;
-#X msg 310 89 1;
-#X obj 310 113 +;
-#X floatatom 304 139 5 0 0 0 - - -;
-#X obj 305 168 % 16;
-#X msg 350 167 \; seq resize \$1;
-#X obj 372 122 nbx 5 14 -1e+37 1e+37 0 1 empty sequence_length_rcv
+#X restore 526 316 graph;
+#X msg 314 160 1;
+#X obj 314 184 +;
+#X floatatom 308 210 5 0 0 0 - - -;
+#X obj 309 239 % 16;
+#X msg 354 238 \; seq resize \$1;
+#X obj 376 193 nbx 5 14 -1e+37 1e+37 0 1 empty sequence_length_rcv
 sequence_length 0 -8 0 10 -262144 -1 -1 12 256;
-#X floatatom 306 197 5 0 0 0 - - -;
-#X obj 308 222 tabread seq;
-#X floatatom 308 246 5 0 0 0 - - -;
-#X obj 365 271 * 12;
-#X obj 392 249 nbx 5 14 1 50 0 1 empty pitch_range_rcv pitch_range
-0 -8 0 10 -262144 -1 -1 26 256;
-#X obj 361 302 +;
-#X obj 405 291 nbx 5 14 20 100 0 1 empty pitch_offset_rcv pitch_offset
-0 -8 0 10 -262144 -1 -1 56 256;
-#X obj 770 327 tabwrite seq;
-#X msg 771 90 1;
-#X obj 771 114 +;
-#X floatatom 765 140 5 0 0 0 - - -;
-#X obj 766 169 % 16;
-#X obj 806 86 nbx 5 14 -1e+37 1e+37 0 1 empty sequence_length_rcv sequence_length
+#X floatatom 310 268 5 0 0 0 - - -;
+#X obj 312 293 tabread seq;
+#X floatatom 312 317 5 0 0 0 - - -;
+#X obj 369 342 * 12;
+#X obj 396 320 nbx 5 14 1 50 0 1 empty pitch_range_rcv pitch_range
+0 -8 0 10 -262144 -1 -1 30 256;
+#X obj 365 373 +;
+#X obj 409 362 nbx 5 14 20 100 0 1 empty pitch_offset_rcv pitch_offset
+0 -8 0 10 -262144 -1 -1 50 256;
+#X obj 774 398 tabwrite seq;
+#X msg 775 161 1;
+#X obj 775 185 +;
+#X floatatom 769 211 5 0 0 0 - - -;
+#X obj 770 240 % 16;
+#X obj 810 157 nbx 5 14 -1e+37 1e+37 0 1 empty sequence_length_rcv
+sequence_length 0 -8 0 10 -262144 -1 -1 12 256;
+#X obj 171 200 nbx 5 14 1 1e+37 0 1 sequence_length_rcv empty sequence_length
 0 -8 0 10 -262144 -1 -1 12 256;
-#X obj 167 129 nbx 5 14 1 1e+37 0 1 sequence_length_rcv empty sequence_length
-0 -8 0 10 -262144 -1 -1 12 256;
-#X obj 860 185 until;
-#X obj 876 154 i;
-#X obj 869 38 bng 15 250 50 0 empty random_table_rcv randomize_table
+#X obj 864 256 until;
+#X obj 880 225 i;
+#X obj 873 109 bng 15 250 50 0 empty random_table_rcv randomize_table
 17 7 0 10 -262144 -1 -1;
-#X obj 868 67 t b b;
-#X msg 903 97 0;
-#X obj 826 110 - 1;
-#X obj 777 269 random 100;
-#X obj 777 293 / 100;
-#X obj 766 224 t b f;
+#X obj 872 138 t b b;
+#X msg 907 168 0;
+#X obj 830 181 - 1;
+#X obj 781 340 random 100;
+#X obj 781 364 / 100;
+#X obj 770 295 t b f;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array waveform 2051 float 3;
 #A 0 -0.00803498 0 0.00803498 0.0160694 0.0241027 0.0321342 0.0401636
@@ -325,76 +325,86 @@ sequence_length 0 -8 0 10 -262144 -1 -1 12 256;
 -0.056227 -0.0482039 -0.0401774 -0.0321481 -0.0241166 -0.0160833 -0.00804888
 -1.38997e-05 0.00802108;
 #X coords 0 1 2051 -1 200 140 1;
-#X restore 507 430 graph;
-#X msg 492 641 \; waveform sinesum 2051 1 0.5 0.3333 0.25;
-#X msg 442 677 \; waveform normalize;
-#X msg 627 674 \; waveform sinesum 2051 1 0 -0.1 0;
-#X obj 489 607 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 511 501 graph;
+#X msg 496 712 \; waveform sinesum 2051 1 0.5 0.3333 0.25;
+#X msg 446 748 \; waveform normalize;
+#X msg 631 745 \; waveform sinesum 2051 1 0 -0.1 0;
+#X obj 493 678 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 544 605 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 548 676 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 19 40 nbx 5 14 0 1e+37 0 1 attack_rcv empty attack 0 -8 0 10
+#X obj 23 111 nbx 5 14 0 1e+37 0 1 attack_rcv empty attack 0 -8 0 10
 -262144 -1 -1 12 256;
-#X obj 23 487 nbx 5 14 0 500 0 1 portamento_rcv empty portamento 0
+#X obj 27 558 nbx 5 14 0 500 0 1 portamento_rcv empty portamento 0
 -8 0 10 -262144 -1 -1 4 256;
-#X obj 22 236 nbx 5 14 0 10 0 1 crunch_rcv empty crunch 0 -8 0 10 -262144
+#X obj 26 307 nbx 5 14 0 10 0 1 crunch_rcv empty crunch 0 -8 0 10 -262144
 -1 -1 0.72 256;
-#X obj 21 152 nbx 5 14 0 4 0 1 mod_index_rcv empty mod_index 0 -8 0
+#X obj 25 223 nbx 5 14 0 4 0 1 mod_index_rcv empty mod_index 0 -8 0
 10 -262144 -1 -1 1.87 256;
-#X obj 19 188 nbx 5 14 1 400 0 1 mod_amount_rcv empty mod_amount 0
+#X obj 23 259 nbx 5 14 1 400 0 1 mod_amount_rcv empty mod_amount 0
 -8 0 10 -262144 -1 -1 88.74 256;
-#X obj 329 51 r playnote;
-#X obj 210 706 catch~ synth_out;
-#X obj 124 802 dac~;
-#X obj 218 769 delwrite~ delay1 800;
-#X obj 50 608 delread~ delay1 200;
-#X obj 111 714 *~ 0.5;
-#X obj 197 613 delread~ delay1 210;
-#X obj 331 573 * 0.98;
-#X obj 334 490 nbx 5 14 -1e+37 1e+37 0 0 empty delay_time_rcv delay_time
+#X obj 333 122 r playnote;
+#X obj 214 777 catch~ synth_out;
+#X obj 128 873 dac~;
+#X obj 222 840 delwrite~ delay1 800;
+#X obj 54 679 delread~ delay1 200;
+#X obj 115 785 *~ 0.5;
+#X obj 201 684 delread~ delay1 210;
+#X obj 335 644 * 0.98;
+#X obj 338 561 nbx 5 14 -1e+37 1e+37 0 0 empty delay_time_rcv delay_time
 0 -8 0 10 -262144 -1 -1 125.36 256;
-#X obj 333 538 line;
-#X msg 337 513 \$1 10;
-#X obj 123 671 nbx 5 14 0 0.95 0 1 empty feedback_rcv feedback 0 -8
-0 10 -262144 -1 -1 0.46 256;
-#X obj 26 304 bng 15 250 50 0 random_table_rcv empty randomize_table
-17 7 0 10 -262144 -1 -1;
-#X obj 789 24 loadbang;
-#X obj 26 357 nbx 5 14 -1e+37 1e+37 0 1 delay_time_rcv empty delay_time
-0 -8 0 10 -262144 -1 -1 125.36 256;
-#X obj 25 396 nbx 5 14 0 1 0 1 feedback_rcv empty feedback 0 -8 0 10
--262144 -1 -1 0.68 256;
-#X obj 19 529 nbx 5 14 1 50 0 1 pitch_range_rcv empty pitch_range 0
--8 0 10 -262144 -1 -1 19 256;
-#X obj 21 567 nbx 5 14 20 100 0 1 pitch_offset_rcv empty pitch_offset
-0 -8 0 10 -262144 -1 -1 45 256;
-#X obj 525 385 hsl 195 15 0 12 0 0 empty current_loc empty -2 -8 0
-10 -262144 -1 -1 7275 1;
-#X msg 516 160 \; current_loc range 0 \$1;
-#X obj 209 251 s current_loc;
-#X obj 261 227 + 0.5;
-#X obj 430 371 bela_analog;
-#X obj 423 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 424 311 loadbang;
-#X obj 265 456 clone synth_voice_toggle 4;
-#X obj 25 431 nbx 5 14 0 1 0 0 volume_rcv empty volume 0 -8 0 10 -262144
--1 -1 0 256;
-#X obj 250 392 pack 0 0 0;
-#X msg 259 422 \$1 \$2 \$3;
-#X obj 157 175 % 4;
-#X floatatom 160 218 5 0 0 0 - - -;
-#X obj 371 421 print;
-#X obj 196 361 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 248 361 t b f;
-#X obj 206 295 r playnote;
-#X msg 217 320 1;
-#X obj 274 315 r stopnote;
-#X msg 299 342 0;
-#X msg 775 468 \; volume_rcv 0.8 \;;
-#X obj 29 91 nbx 5 14 -1e+37 1e+37 0 0 release_rcv empty empty 0 -8
+#X obj 337 609 line;
+#X msg 341 584 \$1 10;
+#X obj 127 742 nbx 5 14 0 0.95 0 1 empty feedback_rcv feedback 0 -8
 0 10 -262144 -1 -1 0 256;
+#X obj 30 375 bng 15 250 50 0 random_table_rcv empty randomize_table
+17 7 0 10 -262144 -1 -1;
+#X obj 793 95 loadbang;
+#X obj 30 428 nbx 5 14 -1e+37 1e+37 0 1 delay_time_rcv empty delay_time
+0 -8 0 10 -262144 -1 -1 125.36 256;
+#X obj 29 467 nbx 5 14 0 1 0 1 feedback_rcv empty feedback 0 -8 0 10
+-262144 -1 -1 0.68 256;
+#X obj 23 593 nbx 5 14 1 50 0 1 pitch_range_rcv pitch_range pitch_range
+0 -8 0 10 -262144 -1 -1 30 256;
+#X obj 25 638 nbx 5 14 20 100 0 1 pitch_offset_rcv pitch_offset pitch_offset
+0 -8 0 10 -262144 -1 -1 50 256;
+#X obj 529 456 hsl 195 15 0 12 0 0 empty current_loc empty -2 -8 0
+10 -262144 -1 -1 10508 1;
+#X msg 520 231 \; current_loc range 0 \$1;
+#X obj 213 322 s current_loc;
+#X obj 265 298 + 0.5;
+#X obj 108 86 bela_analog;
+#X obj 101 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 102 26 loadbang;
+#X obj 269 527 clone synth_voice_toggle 4;
+#X obj 29 502 nbx 5 14 0 1 0 0 volume_rcv volume volume 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 254 463 pack 0 0 0;
+#X msg 263 493 \$1 \$2 \$3;
+#X obj 161 246 % 4;
+#X floatatom 164 289 5 0 0 0 - - -;
+#X obj 375 492 print;
+#X obj 200 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 252 432 t b f;
+#X obj 210 366 r playnote;
+#X msg 221 391 1;
+#X obj 278 386 r stopnote;
+#X msg 303 413 0;
+#X msg 779 539 \; volume_rcv 0.8 \;;
+#X obj 33 162 nbx 5 14 -1e+37 1e+37 0 0 release_rcv empty release 0
+-8 0 10 -262144 -1 -1 269 256;
+#X text 123 50 ***turn this off to use without Bela***;
+#N canvas 0 23 450 300 reset 0;
+#X obj 251 95 inlet;
+#X obj 263 145 sel 0;
+#X msg 264 187 \; volume 1 \; pitch_range 30 \; pitch_offset 50 \;
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 203 82 pd reset;
+#X text 470 45 ***tap "t" to simulate trampoline***;
 #X connect 0 0 69 2;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -452,6 +462,7 @@ sequence_length 0 -8 0 10 -262144 -1 -1 12 256;
 #X connect 55 0 25 0;
 #X connect 63 0 62 0;
 #X connect 65 0 64 0;
+#X connect 65 0 83 0;
 #X connect 66 0 65 0;
 #X connect 69 0 70 0;
 #X connect 69 0 73 0;

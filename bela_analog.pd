@@ -1,4 +1,4 @@
-#N canvas 143 291 1227 628 12;
+#N canvas 143 250 1227 628 12;
 #X obj 58 2 r bela_digitalIn11;
 #X obj 57 75 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -53,7 +53,7 @@
 #X floatatom 296 228 5 0 0 0 - - -;
 #X obj 226 270 s volume_rcv;
 #X obj 124 223 s stopnote;
-#X obj 109 193 s tramp;
+#X obj 13 123 s tramp;
 #X obj 80 97 key;
 #X obj 75 122 sel 116;
 #X msg 75 146 1;
