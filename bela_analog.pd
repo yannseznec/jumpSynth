@@ -82,6 +82,7 @@
 #X msg 137 185 0;
 #X obj 103 125 change;
 #X obj 97 -153 loadbang;
+#X obj 279 -147 loadbang;
 #X connect 0 0 49 0;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
@@ -168,4 +169,4 @@
 #X connect 76 0 0 0;
 #X connect 77 0 0 0;
 #X connect 78 0 75 0;
-#X connect 79 0 65 0;
+#X connect 80 0 64 0;
