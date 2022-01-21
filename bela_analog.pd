@@ -63,10 +63,11 @@
 #X obj 327 472 * 11;
 #X obj 458 620 s feedback_rcv;
 #X obj 457 593 * 2;
-#X obj 85 73 notein;
+#X obj 82 59 notein;
 #X obj 85 100 pack 0 0;
 #X obj 85 124 route 60;
 #X obj 166 104 print;
+#X obj 79 161 / 100;
 #X connect 0 0 49 0;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
@@ -133,5 +134,7 @@
 #X connect 60 0 59 0;
 #X connect 61 0 62 0;
 #X connect 61 0 64 0;
+#X connect 61 1 62 1;
 #X connect 62 0 63 0;
-#X connect 63 0 0 0;
+#X connect 63 0 65 0;
+#X connect 65 0 0 0;
